@@ -7,6 +7,11 @@ CREATE TABLE customer (
     name VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE something (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
 ## agregar columnas
 ALTER TABLE customer ADD email VARCHAR(50);
 ALTER TABLE customer ADD phone varchar(20);
@@ -17,5 +22,31 @@ ALTER TABLE customer DROP COLUMN phone;
 ## modificar columnas
 ALTER TABLE customer MODIFY email VARCHAR(200) NOT NULL;
 
+## eliminar tabla
+DROP TABLE something;
+
+## insertar información
+INSERT INTO customer(name, email) VALUES ("Ángel","avm230@hotmail.com");
+
+INSERT INTO customer(name, email) VALUES 
+("Uriel", "uriel@gmail.com"),
+("velasco", "velasco@gmail.com"),
+("mejia", "mejia@gmail.com");
+
+## consultar información
+SELECT * FROM customer;
+
+### consultar apartir de X registro, N cantidad de registros:
+SELECT * FROM customer LIMIT 0,2;
+
+### valor que se repite
+SELECT "Constante", 3, name FROM customer;
+
+### conversión a minúsculas o mayúsculas
+SELECT id, UPPER(name) FROM customer;
+SELECT id, LOWER(name) FROM customer;
+
+### length longitud de caracteres
+SELECT id, name, LENGTH(name) AS "longitud" FROM customer;
 
 SELECT * FROM customer;
