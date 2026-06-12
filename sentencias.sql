@@ -49,6 +49,28 @@ SELECT id, LOWER(name) FROM customer;
 ### length longitud de caracteres
 SELECT id, name, LENGTH(name) AS "longitud" FROM customer;
 
+
+
+
+
+
+### insertar datos despues de TRUNCATE
+INSERT INTO customer(name, email) VALUES
+("juan", "juan@gmail.com"),
+("ana","ana@gmail.com"),
+("ana","ana2@gmail.com"),
+("hector","hector@gmail.com"),
+("francisco","francisco@gmail.com");
+
+## Contar cantidad de registros en la tabla
+SELECT count(*) AS "Cantidad de registros" FROM customer;
+
+## Contar y agrupar por un campo
+SELECT name, COUNT(*) AS "cantidad" FROM customer GROUP BY name;
+
+
+
+
 ## ordenar datos
 SELECT * FROM customer 
 ORDER BY name;
