@@ -132,4 +132,20 @@ SELECT * FROM city;
 
 DESCRIBE city;
 
+## UNIQUE - valores unicos 
+ALTER TABLE city ADD UNIQUE(name);
+INSERT INTO city (name) VALUES ("CDMX"); # Genera error porque ya existe
+INSERT INTO city (name) VALUES ("Guadalajara"); # Lo inserta inicialmente bien
+INSERT INTO city (name) VALUES ("Guadalajara"); # Genera error porque ya existe
+
+## DEFAULT - Asignar valores por defecto a una columna
+ALTER TABLE customer ADD COLUMN currency VARCHAR(3) DEFAULT 'MXN'; #agrega la columna y rellena con el valor default
+INSERT INTO customer (name, email, currency) VALUES ("Rodrigo", "rod@gmail.com", "USD"); #tiene preioridad el valor enviado sobre un default
+
+## Agregar un valor DEFAULT a una columna ya existente
+ALTER TABLE customer ADD COLUMN created_at DATETIME; #Eejemplo creamos una columna pero sin asignarle un valor default
+ALTER TABLE customer ALTER created_at SET DEFAULT CURRENT_TIMESTAMP(); #se asigna el valor default con el alter a la columna
+INSERT INTO customer (name, email, currency) VALUES ("Marco	", "marco@gmail.com", "RUB"); #cuando se inserta un nuevo registro ya se asigna el valor default al campo created_at
+
+SELECT * FROM city;
 SELECT * FROM customer;
