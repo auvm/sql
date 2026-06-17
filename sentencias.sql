@@ -147,5 +147,8 @@ ALTER TABLE customer ADD COLUMN created_at DATETIME; #Eejemplo creamos una colum
 ALTER TABLE customer ALTER created_at SET DEFAULT CURRENT_TIMESTAMP(); #se asigna el valor default con el alter a la columna
 INSERT INTO customer (name, email, currency) VALUES ("Marco	", "marco@gmail.com", "RUB"); #cuando se inserta un nuevo registro ya se asigna el valor default al campo created_at
 
+## INDEX - índices
+
+
 SELECT * FROM city;
 SELECT * FROM customer;
